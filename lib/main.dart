@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -16,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.blue,
-          background:   const Color.fromARGB(255, 153, 236, 9), 
+          background: const Color.fromARGB(255, 233, 239, 223),
         ),
         useMaterial3: true,
       ),
@@ -55,14 +54,22 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             const Text(
-              'Cada click é um passo à diante rumo ao objetivo:',
+              'Cada click \né um passo à diante \nrumo ao objetivo:',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic,
+                color: Colors.blue,
+                letterSpacing: 1.5,
+                wordSpacing: 2.0,
+              ),
             ),
             Text(
               '$_counter',
               style: TextStyle(
                 fontSize: 50,
                 fontWeight: FontWeight.bold,
-                color:  const Color.fromARGB(255, 204, 18, 18),
+                color: const Color.fromARGB(255, 204, 18, 18),
                 shadows: [
                   Shadow(
                     blurRadius: 10,
