@@ -64,11 +64,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   Shadow(
                     blurRadius: 10,
                     color: Colors.black.withOpacity(0.5),
-                    offset: Offset(4, 4), // Deslocamento da sombra
+                    offset: const Offset(4, 4), // Deslocamento da sombra
                   ),
                 ],
                 decoration: TextDecoration.underline, // Adiciona sublinhado
-                decorationColor: Color.fromARGB(255, 63, 7, 51), //sublinHado
+                decorationColor:const Color.fromARGB(255, 63, 7, 51), //sublinHado
                 decorationThickness: 0.3, // Espessura
                 decorationStyle:
                     TextDecorationStyle.double, //duas linhas de baixo
