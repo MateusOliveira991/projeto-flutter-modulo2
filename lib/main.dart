@@ -14,7 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Fluttuando',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blue,
+          background:   const Color.fromARGB(255, 153, 236, 9), 
+        ),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Fluttuando'),
@@ -57,9 +60,9 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: TextStyle(
-                fontSize: 80,
+                fontSize: 50,
                 fontWeight: FontWeight.bold,
-                color: Colors.blue,
+                color:  const Color.fromARGB(255, 204, 18, 18),
                 shadows: [
                   Shadow(
                     blurRadius: 10,
@@ -68,7 +71,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ],
                 decoration: TextDecoration.underline, // Adiciona sublinhado
-                decorationColor:const Color.fromARGB(255, 63, 7, 51), //sublinHado
+                decorationColor:
+                    const Color.fromARGB(255, 63, 7, 51), //sublinHado
                 decorationThickness: 0.3, // Espessura
                 decorationStyle:
                     TextDecorationStyle.double, //duas linhas de baixo
