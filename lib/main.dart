@@ -35,10 +35,21 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String _result = 'resultado:';
 
   void _incrementCounter() {
     setState(() {
       _counter++;
+    });
+  }
+
+  void _desafio1() {
+    int valorA = 10;
+    int valorB = 20;
+    int soma = valorA + valorB;
+
+    setState(() {
+      _result = soma.toString();
     });
   }
 
@@ -65,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Text(
-              '$_counter',
+              _result,
               style: TextStyle(
                 fontSize: 50,
                 fontWeight: FontWeight.bold,
@@ -89,8 +100,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
+        onPressed: _desafio1,
+        tooltip: '_desafio1',
         child: const Icon(FontAwesomeIcons.rocket),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
