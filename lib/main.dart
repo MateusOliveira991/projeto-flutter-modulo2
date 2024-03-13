@@ -46,10 +46,17 @@ class _MyHomePageState extends State<MyHomePage> {
   void _desafio1() {
     int valorA = 10;
     int valorB = 20;
-    int soma = valorA + valorB;
+    
+    if (valorA > valorB) {
+      _result = 'O valor A é maior';
+    } else if (valorA < valorB) {
+      _result = 'O valor B é maior';
+    } else {
+      _result = 'Os valores são iguais';
+    }
 
     setState(() {
-      _result = soma.toString();
+    _result.toString();
     });
   }
 
@@ -67,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text(
               'Resultado:',
               style: TextStyle(
-                fontSize: 24,
+                fontSize: 35,
                 fontWeight: FontWeight.bold,
                 fontStyle: FontStyle.italic,
                 color: Colors.blue,
@@ -78,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               _result,
               style: TextStyle(
-                fontSize: 50,
+                fontSize: 30,
                 fontWeight: FontWeight.bold,
                 color: const Color.fromARGB(255, 204, 18, 18),
                 shadows: [
@@ -107,4 +114,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
