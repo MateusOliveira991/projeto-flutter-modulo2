@@ -50,11 +50,11 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Cada click \né um passo à diante \nrumo ao objetivo:',
+              'Resultado:',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -96,3 +96,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
