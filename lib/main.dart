@@ -86,23 +86,54 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-void _desafio3() {
-  int numero = 3;
-  int fatorial = calcularFatorial(numero);
+  void _desafio3() {
+    int numero = 3;
+    int fatorial = calcularFatorial(numero);
 
-  setState(() {
+    setState(() {
       _result = 'O fatorial de $numero é $fatorial';
-  });
-}
-
-int calcularFatorial(int numero) {
-  if (numero == 0) {
-    return 1;
-  } else {
-    return numero * calcularFatorial(numero - 1);
+    });
   }
-}
 
+  int calcularFatorial(int numero) {
+    if (numero == 0) {
+      return 1;
+    } else {
+      return numero * calcularFatorial(numero - 1);
+    }
+  }
+
+//Crie uma função que inicialize um número qualquer. Como resultado,
+//mostre na tela se o número é par ou ímpar e positivo ou negativo.
+
+  void _desafio4() {
+    int numero = -8;
+    String parImpar = '';
+    String valor = '';
+
+    
+
+      if (numero == 0) {
+        parImpar =
+            'Apesar de ser o número $numero , ele é considerado como par.';
+      } else if (numero % 2 == 0) {
+        parImpar = 'O número $numero é par';
+      } else {
+        parImpar = 'O número $numero é ímpar';
+      }
+
+      if (numero > 0) {
+        valor = 'e $numero é um número positivo.';
+      } else if (numero < 0) {
+        valor = 'e $numero é um número negativo.';
+      } else {
+        valor = 'Nem negativo e nem positivo. É considerado neutro.';
+      }
+
+      _result = '$parImpar\n$valor';
+      setState(() {});
+   
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -116,7 +147,7 @@ int calcularFatorial(int numero) {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Desafio 3:',
+              'Desafio 4:',
               style: TextStyle(
                 fontSize: 35,
                 fontWeight: FontWeight.bold,
@@ -151,8 +182,8 @@ int calcularFatorial(int numero) {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio3,
-        tooltip: '_desafio3',
+        onPressed: _desafio4,
+        tooltip: '_desafio4',
         child: const Icon(FontAwesomeIcons.rocket),
       ),
     );
