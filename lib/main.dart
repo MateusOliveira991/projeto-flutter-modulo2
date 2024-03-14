@@ -107,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
 //mostre na tela se o número é par ou ímpar e positivo ou negativo.
 
   void _desafio4() {
-    int numero = -8;
+    int numero = -7;
     String parImpar = '';
     String valor = '';
 
@@ -130,8 +130,10 @@ class _MyHomePageState extends State<MyHomePage> {
         valor = 'Nem negativo e nem positivo. É considerado neutro.';
       }
 
-      _result = '$parImpar\n$valor';
       setState(() {});
+
+      _result = '$parImpar\n$valor';
+      
    
   }
 
