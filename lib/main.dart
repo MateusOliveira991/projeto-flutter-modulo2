@@ -134,7 +134,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _desafio5() {
     int a = 3;
-    int b = 5;
+    int b = 6;
     int resultado = calculo(a, b);
 
     setState(() {
@@ -145,7 +145,6 @@ class _MyHomePageState extends State<MyHomePage> {
       }
     });
   }
-
   int calculo(int a, int b) {
     if (a == b) {
       return a + b;
