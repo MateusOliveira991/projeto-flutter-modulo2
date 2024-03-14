@@ -86,6 +86,24 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+void _desafio3() {
+  int numero = 3;
+  int fatorial = calcularFatorial(numero);
+
+  setState(() {
+      _result = 'O fatorial de $numero é $fatorial';
+  });
+}
+
+int calcularFatorial(int numero) {
+  if (numero == 0) {
+    return 1;
+  } else {
+    return numero * calcularFatorial(numero - 1);
+  }
+}
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,7 +116,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Desafio 2:',
+              'Desafio 3:',
               style: TextStyle(
                 fontSize: 35,
                 fontWeight: FontWeight.bold,
@@ -133,8 +151,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio2,
-        tooltip: '_desafio2',
+        onPressed: _desafio3,
+        tooltip: '_desafio3',
         child: const Icon(FontAwesomeIcons.rocket),
       ),
     );
