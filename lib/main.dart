@@ -133,7 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _desafio5() {
-    int a = 2;
+    int a = 3;
     int b = 5;
     int resultado = calculo(a, b);
 
