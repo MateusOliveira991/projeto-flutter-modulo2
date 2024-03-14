@@ -68,20 +68,20 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _desafio2() {
     int valorA = 10;
-    int valorB = 20;
+    int valorB = 10;
     int valorC = 25;
     int soma = valorA + valorB;
 
     setState(() {
       if (soma > valorC) {
         _result =
-            'A soma de A + B = $soma,\nque é maior do que C,\n o valor de C é $valorC';
+            'valorA[$valorA]\nvalorB[$valorB]\nvalorC[$valorC]\nSoma de A+B = [$soma]\n A+B é maior que C';
       } else if (soma < valorC) {
         _result =
-            'A soma de A + B = $soma,\nque é menor do que C,\n o valor de C é $valorC';
+            'valorA[$valorA]\nvalorB[$valorB]\nvalorC[$valorC]\nSoma de A+B = [$soma]\n A+B é menor que C';
       } else {
         _result =
-            'A soma de A + B = $soma,\nque é igual a C,\n o valor de C é $valorC';
+            'valorA[$valorA]\nvalorB[$valorB]\nvalorC[$valorC]\nSoma de A+B = [$soma]\n A+B é igual a C';
       }
     });
   }
