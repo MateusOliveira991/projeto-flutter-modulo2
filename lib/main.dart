@@ -43,10 +43,13 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  // Crie uma função que inicialize dois valores inteiros (A e B). Como resultado, mostre
+  // na tela qual é o maior valor.
+
   void _desafio1() {
     int valorA = 10;
     int valorB = 20;
-    
+
     if (valorA > valorB) {
       _result = 'O valor A é maior';
     } else if (valorA < valorB) {
@@ -56,7 +59,30 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 
     setState(() {
-    _result.toString();
+      _result.toString();
+    });
+  }
+
+  //Crie uma função que inicialize os valores de A, B, C. Como resultado, mostre na tela a
+  //soma entre A e B e se a soma é maior ou menor do que C
+
+  void _desafio2() {
+    int valorA = 10;
+    int valorB = 10;
+    int valorC = 25;
+    int soma = valorA + valorB;
+
+    setState(() {
+      if (soma > valorC) {
+        _result =
+            'valorA[$valorA]\nvalorB[$valorB]\nvalorC[$valorC]\nSoma de A+B = [$soma]\n A+B é maior que C';
+      } else if (soma < valorC) {
+        _result =
+            'valorA[$valorA]\nvalorB[$valorB]\nvalorC[$valorC]\nSoma de A+B = [$soma]\n A+B é menor que C';
+      } else {
+        _result =
+            'valorA[$valorA]\nvalorB[$valorB]\nvalorC[$valorC]\nSoma de A+B = [$soma]\n A+B é igual a C';
+      }
     });
   }
 
@@ -72,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Resultado:',
+              'Desafio 2:',
               style: TextStyle(
                 fontSize: 35,
                 fontWeight: FontWeight.bold,
@@ -107,10 +133,10 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio1,
-        tooltip: '_desafio1',
+        onPressed: _desafio2,
+        tooltip: '_desafio2',
         child: const Icon(FontAwesomeIcons.rocket),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
