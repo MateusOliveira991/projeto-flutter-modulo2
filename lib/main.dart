@@ -86,6 +86,24 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+void _desafio3() {
+  int numero = 3;
+  int fatorial = calcularFatorial(numero);
+
+  setState(() {
+      _result = 'O fatorial de $numero é $fatorial';
+  });
+}
+
+int calcularFatorial(int numero) {
+  if (numero == 0) {
+    return 1;
+  } else {
+    return numero * calcularFatorial(numero - 1);
+  }
+}
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
