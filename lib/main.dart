@@ -98,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Desafio 2:',
+              'Desafio 3:',
               style: TextStyle(
                 fontSize: 35,
                 fontWeight: FontWeight.bold,
@@ -133,8 +133,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio2,
-        tooltip: '_desafio2',
+        onPressed: _desafio3,
+        tooltip: '_desafio3',
         child: const Icon(FontAwesomeIcons.rocket),
       ),
     );
