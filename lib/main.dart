@@ -111,30 +111,48 @@ class _MyHomePageState extends State<MyHomePage> {
     String parImpar = '';
     String valor = '';
 
-    
+    if (numero == 0) {
+      parImpar = 'Apesar de ser o número $numero , ele é considerado como par.';
+    } else if (numero % 2 == 0) {
+      parImpar = 'O número $numero é par';
+    } else {
+      parImpar = 'O número $numero é ímpar';
+    }
 
-      if (numero == 0) {
-        parImpar =
-            'Apesar de ser o número $numero , ele é considerado como par.';
-      } else if (numero % 2 == 0) {
-        parImpar = 'O número $numero é par';
+    if (numero > 0) {
+      valor = 'e $numero é um número positivo.';
+    } else if (numero < 0) {
+      valor = 'e $numero é um número negativo.';
+    } else {
+      valor = 'Nem negativo e nem positivo. É considerado neutro.';
+    }
+
+    setState(() {});
+
+    _result = '$parImpar\n$valor';
+  }
+
+  void _desafio5() {
+    int a = 2;
+    int b = 5;
+    int resultado = calculo(a, b);
+
+    setState(() {
+      if (a == b) {
+        _result = 'O resultado é a soma: $resultado';
       } else {
-        parImpar = 'O número $numero é ímpar';
+        _result = 'O resultado é a multiplicação: $resultado';
       }
+    });
+  }
 
-      if (numero > 0) {
-        valor = 'e $numero é um número positivo.';
-      } else if (numero < 0) {
-        valor = 'e $numero é um número negativo.';
-      } else {
-        valor = 'Nem negativo e nem positivo. É considerado neutro.';
-      }
-
-      setState(() {});
-
-      _result = '$parImpar\n$valor';
-      
-   
+  int calculo(int a, int b) {
+    if (a == b) {
+      return a + b;
+    } 
+    else {
+      return a * b;
+    }
   }
 
   @override
@@ -149,7 +167,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Desafio 4:',
+              'Desafio 5:',
               style: TextStyle(
                 fontSize: 35,
                 fontWeight: FontWeight.bold,
@@ -184,8 +202,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio4,
-        tooltip: '_desafio4',
+        onPressed: _desafio5,
+        tooltip: '_desafio5',
         child: const Icon(FontAwesomeIcons.rocket),
       ),
     );
