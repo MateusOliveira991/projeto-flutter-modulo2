@@ -167,6 +167,22 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  //Desafio 11:
+  //Crie uma função que inicialize um número inteiro e mostre na tela a tabuada de 1 a 10 desse número.
+
+  void _desafio11() {
+    int numero = 9;
+  List<String> tabuada = [];
+
+  for (int i = 1; i <= 10; i++) {
+    tabuada.add('$numero x $i = ${numero * i}');
+  }
+
+  setState(() {
+    _result = tabuada.join('\n');
+  });
+}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -214,8 +230,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio6,
-        tooltip: '_desafio6',
+        onPressed: _desafio11,
+        tooltip: '_desafio11',
         child: const Icon(FontAwesomeIcons.rocket),
       ),
     );
