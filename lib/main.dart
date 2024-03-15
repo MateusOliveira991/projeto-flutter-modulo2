@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -187,16 +188,45 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _desafio11() {
     int numero = 9;
-  List<String> tabuada = [];
+    List<String> tabuada = [];
 
-  for (int i = 1; i <= 10; i++) {
-    tabuada.add('$numero x $i = ${numero * i}');
+    for (int i = 1; i <= 10; i++) {
+      tabuada.add('$numero x $i = ${numero * i}');
+    }
+
+    setState(() {
+      _result = tabuada.join('\n');
+    });
   }
 
-  setState(() {
-    _result = tabuada.join('\n');
-  });
-}
+  //Desafio 17
+  //Crie uma função que inicialize um número e imprime uma mensagem dizendo se ele é ou não é um número primo.
+
+    void _desafio17() {
+    int numero = 13; // Número fixo para verificar se é primo
+    if (numero <= 1) {
+      setState(() {
+        _result = '$numero não é um número primo.';
+      });
+      return;
+    }
+
+    bool ePrimo = true;
+    for (int i = 2; i <= sqrt(numero); i++) {
+      if (numero % i == 0) {
+        ePrimo = false;
+        break;
+      }
+    }
+
+    setState(() {
+      if (ePrimo) {
+        _result = '$numero é um número primo.';
+      } else {
+        _result = '$numero não é um número primo.';
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
