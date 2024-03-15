@@ -199,6 +199,27 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+//Crie uma função que inicialize uma lista com 10 números inteiros. Como resultado, mostre na tela a quantidade de números pares e a quantidade de números impares que existem na lista.
+
+  void _desafio13() {
+    List<int> numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    int pares = 0;
+    int impares = 0;
+
+    for (int numero in numeros) {
+      if (numero % 2 == 0) {
+        pares++;
+      } else {
+        impares++;
+      }
+    }
+
+    setState(() {
+      _result = 'A lista possui $pares números pares\n e $impares números ímpares';
+    });
+  }
+
+
   /// Escreva um método que determina se uma palavra ou frase é um palíndromo, ou seja,
   /// a palavra pode ser lida de da esquerda para a direita ou ao contrário, ignorando pontuação,
   /// números e qualquer outro caracter que não seja uma letra.
@@ -262,7 +283,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Resultado:',
+              'Desafio 13:',
               style: TextStyle(
                 fontSize: 35,
                 fontWeight: FontWeight.bold,
@@ -297,8 +318,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio16,
-        tooltip: '_desafio16',
+        onPressed: _desafio13,
+        tooltip: '_desafio13',
         child: const Icon(FontAwesomeIcons.rocket),
       ),
     );
