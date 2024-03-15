@@ -145,13 +145,26 @@ class _MyHomePageState extends State<MyHomePage> {
       }
     });
   }
+
   int calculo(int a, int b) {
     if (a == b) {
       return a + b;
-    } 
-    else {
+    } else {
       return a * b;
     }
+  }
+
+  //Desafio 6:
+  //Faça uma função que inicialize um número inteiro qualquer. Como resultado, mostre na tela o seu antecessor e o seu sucessor
+
+  void _desafio6() {
+    int numero = 9;
+    int antecessor = numero - 1;
+    int sucessor = numero + 1;
+
+    setState(() {
+      _result = 'Número: $numero\nAntecessor: $antecessor\nSucessor: $sucessor';
+    });
   }
 
   @override
@@ -166,7 +179,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Desafio 5:',
+              'Resultado:',
               style: TextStyle(
                 fontSize: 35,
                 fontWeight: FontWeight.bold,
@@ -201,8 +214,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio5,
-        tooltip: '_desafio5',
+        onPressed: _desafio6,
+        tooltip: '_desafio6',
         child: const Icon(FontAwesomeIcons.rocket),
       ),
     );
