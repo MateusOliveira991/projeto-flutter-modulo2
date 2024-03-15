@@ -199,6 +199,28 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  /// Escreva um método que determina se uma palavra ou frase é um palíndromo, ou seja,
+  /// a palavra pode ser lida de da esquerda para a direita ou ao contrário, ignorando pontuação,
+  /// números e qualquer outro caracter que não seja uma letra.
+  /// Considere também que não há diferenças entre letras maiúsculas e minúsculas. Exemplos de palíndromo: Ana, madam, Arara.
+  void _desafio16(){
+    String word = 'Arara';
+    var onlyLetters = word.replaceAll(RegExp('[^A-Za-z]'),'').split('');
+    String reversed = onlyLetters.reversed.join();
+
+    String palindrome = 'Falso';
+
+    if (word.toLowerCase() == reversed.toLowerCase()) {
+      palindrome = 'Verdadeiro';
+    }
+
+    setState(() {
+      _result = 'Palavra: $word\nPalíndromo: $palindrome';
+    });
+
+    return ;
+  }
+
   //Desafio 17
   //Crie uma função que inicialize um número e imprime uma mensagem dizendo se ele é ou não é um número primo.
 
@@ -275,8 +297,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio7,
-        tooltip: '_desafio7',
+        onPressed: _desafio16,
+        tooltip: '_desafio16',
         child: const Icon(FontAwesomeIcons.rocket),
       ),
     );
