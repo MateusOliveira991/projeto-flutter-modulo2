@@ -167,6 +167,21 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  /// Faça uma função que inicialize o valor do salário mínimo e o valor do salário de um usuário em duas variáveis diferentes.
+  /// Calcule quantos salários mínimos esse usuário ganha e mostre na tela o resultado.
+  /// (Base para o salário mínimo R$ 1.412,00).
+  void _desafio7() {
+    double minimumWage = 1412.00;
+    double salary = 7000.00;
+    double result = salary/minimumWage;
+
+    result = double.parse((result).toStringAsFixed(2));
+
+    setState(() {
+      _result = '$salary reais equivale a\n$result salários mínimos.';
+    });
+  }
+
   //Desafio 11:
   //Crie uma função que inicialize um número inteiro e mostre na tela a tabuada de 1 a 10 desse número.
 
@@ -230,8 +245,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio11,
-        tooltip: '_desafio11',
+        onPressed: _desafio7,
+        tooltip: '_desafio7',
         child: const Icon(FontAwesomeIcons.rocket),
       ),
     );
