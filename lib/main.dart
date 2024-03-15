@@ -156,7 +156,8 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   //Desafio 6:
-  //Faça uma função que inicialize um número inteiro qualquer. Como resultado, mostre na tela o seu antecessor e o seu sucessor
+  //Faça uma função que inicialize um número inteiro qualquer.
+  //Como resultado, mostre na tela o seu antecessor e o seu sucessor
 
   void _desafio6() {
     int numero = 9;
@@ -174,12 +175,32 @@ class _MyHomePageState extends State<MyHomePage> {
   void _desafio7() {
     double minimumWage = 1412.00;
     double salary = 7000.00;
-    double result = salary/minimumWage;
+    double result = salary / minimumWage;
 
     result = double.parse((result).toStringAsFixed(2));
 
     setState(() {
       _result = '$salary reais equivale a\n$result salários mínimos.';
+    });
+  }
+
+//Desafio10
+//Crie uma função que inicialize o nome e a idade de uma pessoa.
+//Como resultado, mostre na tela o nome da pessoa e se ela é maior ou menor de idade.
+
+  void _desafio10() {
+    String nome = 'Lilica';
+    int idade = 17;
+
+    String status;
+    if (idade >= 18) {
+      status = 'maior de idade';
+    } else {
+      status = 'menor de idade';
+    }
+
+    setState(() {
+      _result = '$nome é $status.';
     });
   }
 
@@ -215,18 +236,18 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 
     setState(() {
-      _result = 'A lista possui $pares números pares\n e $impares números ímpares';
+      _result =
+          'A lista possui $pares números pares\n e $impares números ímpares';
     });
   }
-
 
   /// Escreva um método que determina se uma palavra ou frase é um palíndromo, ou seja,
   /// a palavra pode ser lida de da esquerda para a direita ou ao contrário, ignorando pontuação,
   /// números e qualquer outro caracter que não seja uma letra.
   /// Considere também que não há diferenças entre letras maiúsculas e minúsculas. Exemplos de palíndromo: Ana, madam, Arara.
-  void _desafio16(){
+  void _desafio16() {
     String word = 'Arara';
-    var onlyLetters = word.replaceAll(RegExp('[^A-Za-z]'),'').split('');
+    var onlyLetters = word.replaceAll(RegExp('[^A-Za-z]'), '').split('');
     String reversed = onlyLetters.reversed.join();
 
     String palindrome = 'Falso';
@@ -239,13 +260,13 @@ class _MyHomePageState extends State<MyHomePage> {
       _result = 'Palavra: $word\nPalíndromo: $palindrome';
     });
 
-    return ;
+    return;
   }
 
   //Desafio 17
   //Crie uma função que inicialize um número e imprime uma mensagem dizendo se ele é ou não é um número primo.
 
-    void _desafio17() {
+  void _desafio17() {
     int numero = 13; // Número fixo para verificar se é primo
     if (numero <= 1) {
       setState(() {
@@ -283,7 +304,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Desafio 13:',
+              'Resultado:',
               style: TextStyle(
                 fontSize: 35,
                 fontWeight: FontWeight.bold,
@@ -318,8 +339,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio13,
-        tooltip: '_desafio13',
+        onPressed: _desafio10,
+        tooltip: '_desafio10',
         child: const Icon(FontAwesomeIcons.rocket),
       ),
     );
