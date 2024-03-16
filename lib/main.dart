@@ -200,6 +200,36 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+// Desafio 9:
+// Crie uma função que inicialize uma lista de notas de um aluno, calcule a média das notas.
+// Como resultado, mostre na tela a média do aluno e se ele foi aprovado ou reprovado 
+//(média para aprovação: 7)
+
+  void _desafio9() {
+    List<double> notas = [8, 7.5, 6, 9.5]; // Exemplo de lista de notas
+    verificarAprovacao(notas);
+  }
+
+  void verificarAprovacao(List<double> notas) {
+    double soma = 0;
+    for (double nota in notas) {
+      soma += nota;
+    }
+  
+    double media = soma / notas.length;
+    
+    String aluno;
+    if (media >= 7) {
+       aluno = 'O aluno foi aprovado!';
+    } else {
+       aluno = 'O aluno foi reprovado.';
+    }
+
+    setState(() {
+      _result = 'Média do aluno: $media\n$aluno!';
+    });
+  }  
+
 
 //Desafio10
 //Crie uma função que inicialize o nome e a idade de uma pessoa.
@@ -356,8 +386,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio8,
-        tooltip: '_desafio8',
+        onPressed: _desafio9,
+        tooltip: '_desafio9',
         child: const Icon(FontAwesomeIcons.rocket),
       ),
     );
