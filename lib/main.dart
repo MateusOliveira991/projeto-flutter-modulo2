@@ -184,6 +184,23 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+// Desafio 8:
+// Crie uma função que inicialize três valores inteiros diferentes. 
+// Como resultado, mostre na tela os valores em ordem decrescente.
+
+  void _desafio8() {
+    List<int> entrada = [6, 12, 1, 29];
+    mostrarOrdemDecrescente(entrada);
+  }
+
+  void mostrarOrdemDecrescente(List<int> valores) {
+    valores.sort((a, b) => b.compareTo(a));
+    setState(() {
+      _result = 'A ordem decrescente é: $valores';
+    });
+  }
+
+
 //Desafio10
 //Crie uma função que inicialize o nome e a idade de uma pessoa.
 //Como resultado, mostre na tela o nome da pessoa e se ela é maior ou menor de idade.
@@ -339,8 +356,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio10,
-        tooltip: '_desafio10',
+        onPressed: _desafio8,
+        tooltip: '_desafio8',
         child: const Icon(FontAwesomeIcons.rocket),
       ),
     );
