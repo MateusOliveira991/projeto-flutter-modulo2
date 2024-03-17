@@ -267,6 +267,26 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+// Desafio12 
+
+// Crie uma função dart flutter que inicialize uma lista com números inteiros. 
+// Como resultado, mostre na tela uma lista com o quadrado dos números da lista original. 
+
+void _desafio12() {
+  List<int> numeros = [2, 4, 6];
+  List<int> quadrados = [];
+
+  for (int numero in numeros) {
+    quadrados.add(numero * numero);
+  }
+
+  setState(() {
+    _result = quadrados.toString();
+  });
+}
+
+
+
 //Crie uma função que inicialize uma lista com 10 números inteiros. Como resultado, mostre na tela a quantidade de números pares e a quantidade de números impares que existem na lista.
 
   void _desafio13() {
@@ -386,8 +406,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio9,
-        tooltip: '_desafio9',
+        onPressed: _desafio12,
+        tooltip: '_desafio12',
         child: const Icon(FontAwesomeIcons.rocket),
       ),
     );
