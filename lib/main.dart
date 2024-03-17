@@ -309,12 +309,12 @@ void _desafio12() {
   }
 
   // Crie uma função que inicialize uma lista com 10 números inteiros. Como resultado,mostre na tela o menor e o maior número da lista.
- 
+
   void _desafio14() {
     List<int> lista = [2,8,9,15,18,2,20,26,28,32];
     int menor = lista[0];
     int maior = lista[0];
-  
+
     for (int i = 1; i < lista.length; i++) {
       if (lista[i] < menor) {
         menor = lista[i];
@@ -323,12 +323,26 @@ void _desafio12() {
         maior = lista[i];
       }
     }
-  
+
     setState(() {
     _result = 'O menor número será $menor e o maior número será $maior';
     });
   }
 
+  /// Crie uma função que salve, em uma lista, do número 0 até N, em que N é o número limite inicializado em uma variável. Como resultado, mostre a lista na tela.
+  void _desafio15() {
+    List<int> lista = [0,1,2,3,4];
+    int limite = 3;
+    List<int> resultado = [];
+
+    for (int i = 0; i <= limite; i++) {
+      resultado.add(i);
+    } 
+    setState(() {
+      _result = 'A entrada é igual a $limite e a saída é igual a $resultado';
+    });
+  }
+  
   /// Escreva um método que determina se uma palavra ou frase é um palíndromo, ou seja,
   /// a palavra pode ser lida de da esquerda para a direita ou ao contrário, ignorando pontuação,
   /// números e qualquer outro caracter que não seja uma letra.
@@ -459,8 +473,8 @@ void _desafio18() {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio14,
-        tooltip: '_desafio14',
+        onPressed: _desafio15,
+        tooltip: '_desafio15',
         child: const Icon(FontAwesomeIcons.rocket),
       ),
     );
