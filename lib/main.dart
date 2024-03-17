@@ -308,6 +308,27 @@ void _desafio12() {
     });
   }
 
+  // Crie uma função que inicialize uma lista com 10 números inteiros. Como resultado,mostre na tela o menor e o maior número da lista.
+ 
+  void _desafio14() {
+    List<int> lista = [2,8,9,15,18,2,20,26,28,32];
+    int menor = lista[0];
+    int maior = lista[0];
+  
+    for (int i = 1; i < lista.length; i++) {
+      if (lista[i] < menor) {
+        menor = lista[i];
+      }
+      if (lista[i] > maior) {
+        maior = lista[i];
+      }
+    }
+  
+    setState(() {
+    _result = 'O menor número será $menor e o maior número será $maior';
+    });
+  }
+
   /// Escreva um método que determina se uma palavra ou frase é um palíndromo, ou seja,
   /// a palavra pode ser lida de da esquerda para a direita ou ao contrário, ignorando pontuação,
   /// números e qualquer outro caracter que não seja uma letra.
@@ -438,8 +459,8 @@ void _desafio18() {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio18,
-        tooltip: '_desafio18',
+        onPressed: _desafio14,
+        tooltip: '_desafio14',
         child: const Icon(FontAwesomeIcons.rocket),
       ),
     );
