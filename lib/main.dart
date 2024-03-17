@@ -359,6 +359,38 @@ void _desafio12() {
     });
   }
 
+
+
+// Desafio18
+
+// Crie uma função que inicialize uma palavra e inicialize uma frase. 
+// Como resultado, mostre na tela quantas vezes aquela palavra aparece na frase, independente 
+// de letras maiúsculas e minúsculas
+
+void _desafio18() {
+  String palavra = "adriana";
+  String frase = "eu sou adriana, me chamo adriana e meu nome é adriana";
+
+  int contador = 0;
+
+  palavra = palavra.toLowerCase();
+  frase = frase.toLowerCase();
+
+  List<String> palavras = frase.split(" ");
+  for (String p in palavras) {
+    if (p == palavra) {
+      contador++;
+    }
+  }
+
+  setState(() {
+    _result = 'A palavra "$palavra" aparece $contador vezes na frase.';
+  });
+
+  return;
+}
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -406,8 +438,8 @@ void _desafio12() {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio12,
-        tooltip: '_desafio12',
+        onPressed: _desafio18,
+        tooltip: '_desafio18',
         child: const Icon(FontAwesomeIcons.rocket),
       ),
     );
