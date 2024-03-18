@@ -424,6 +424,52 @@ void _desafio18() {
   return;
 }
 
+//Desafio Extra: Mateus
+
+//Um anagrama é uma palavra obtida por meio do rearranjo das letras de outras palavras. Por exemplo, "rats", "tars" e "star" são um grupo de anagramas pois são compostos pelas mesmas letras. Dado uma lista de Strings, escreva um método que agrupa as Strings em grupos de anagramas e salve, em uma nova lista, esses grupos. Letras maiúsculas e minúsculas podem ser tratadas como se fossem iguais, mas o retorno deve manter as letras maiúsculas e minúsculas. A ordem dos grupos ou das Strings não importa.
+//Exemplo:
+//Entrada = ['foR' , 'scream', 'CaRs', 'poTatos', 'racs', 'creams', 'scar', 'four' ]
+//Saída = [ [ 'CaRs', 'racs', 'scar' ], [ 'foR' ], [ 'poTatos' ],
+
+void _desafioExtra() {
+  List<String> entrada = ['silent', 'foR', 'scream',  'CaRs', 'poTatos', 'racs', 'creams', 'scar', 'four', 'listen'];
+  
+  // Convertendo todas as palavras para minúsculas. Usando o método ''map' para aplicar a função 'toLowerCase' a cada elemento da lista entrada.
+  List<String> entradaMinuscula = entrada.map((e) => e.toLowerCase()).toList();
+  
+  // Mapa para armazenar os anagramas
+  Map<String, List<String>> anagramas = {};
+  
+  // Percorrendo a lista de entrada e ordenando as letras de cada palavra, individualmente. 
+  for (String palavra in entradaMinuscula) {
+
+    // Aqui eu divido a palavra em letras usando o método 'split' e ordeno as letras usando o método 'sort'.
+    List<String> letrasOrdenadas = palavra.split('')..sort();
+
+    // Juntando as letras ordenadas em uma única string. Usando o método 'join'.
+    String ordenada = letrasOrdenadas.join();
+    
+    // Aqui estamos verificando se ainda não existe um grupo de anagramas para as letras ordenadas e cria um novo grupo.
+    if (!anagramas.containsKey(ordenada)) {
+      anagramas[ordenada] = [];
+    }
+
+    //Adiciona a palavra original na lista de anagramas.
+    anagramas[ordenada]!.add(palavra);
+  }
+  
+  // Aqui é criado a lista resultado com os grupos de anagramas. 
+  List<List<String>> resultado = anagramas.values.map((grupo) {
+
+    //Convertendo as palavras para sua forma original. 
+    return grupo.map((palavra) => entrada[entradaMinuscula.indexOf(palavra)]).toList();
+  }).toList();
+  
+  setState(() {
+    _result = resultado.toString();
+  });
+}
+
   
   @override
   Widget build(BuildContext context) {
@@ -472,8 +518,8 @@ void _desafio18() {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio18,
-        tooltip: '_desafio1',
+        onPressed: _desafioExtra,
+        tooltip: '_desafioExtra',
         child: const Icon(FontAwesomeIcons.rocket),
       ),
     );
