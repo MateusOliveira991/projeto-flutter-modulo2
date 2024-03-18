@@ -36,7 +36,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  String _result = 'resultado:';
+  String _result = 'loading...';
 
   void _incrementCounter() {
     setState(() {
@@ -237,7 +237,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _desafio10() {
     String nome = 'Lilica';
-    int idade = 17;
+    int idade = 22;
 
     String status;
     if (idade >= 18) {
@@ -403,7 +403,7 @@ void _desafio12() {
 
 void _desafio18() {
   String palavra = "adriana";
-  String frase = "eu sou adriana pois meu nome é adriana e por isso me chamo adriana";
+  String frase = "eu sou adriana, pois meu nome é adriana. e por isso me chamo adriana";
 
   int contador = 0;
 
@@ -412,6 +412,8 @@ void _desafio18() {
 
   List<String> palavras = frase.split(" ");
   for (String p in palavras) {
+    p = p.replaceAll(',', '');
+    p = p.replaceAll('.', '');
     if (p == palavra) {
       contador++;
     }
@@ -424,7 +426,7 @@ void _desafio18() {
   return;
 }
 
-//Desafio Extra: Mateus
+//Desafio Extra:
 
 //Um anagrama é uma palavra obtida por meio do rearranjo das letras de outras palavras. Por exemplo, "rats", "tars" e "star" são um grupo de anagramas pois são compostos pelas mesmas letras. Dado uma lista de Strings, escreva um método que agrupa as Strings em grupos de anagramas e salve, em uma nova lista, esses grupos. Letras maiúsculas e minúsculas podem ser tratadas como se fossem iguais, mas o retorno deve manter as letras maiúsculas e minúsculas. A ordem dos grupos ou das Strings não importa.
 //Exemplo:
@@ -518,8 +520,8 @@ void _desafioExtra() {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafioExtra,
-        tooltip: '_desafioExtra',
+        onPressed: _desafio18,
+        tooltip: '_desafio18',
         child: const Icon(FontAwesomeIcons.rocket),
       ),
     );
