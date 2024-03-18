@@ -403,7 +403,7 @@ void _desafio12() {
 
 void _desafio18() {
   String palavra = "adriana";
-  String frase = "eu sou adriana, me chamo adriana e meu nome é adriana";
+  String frase = "eu sou adriana pois meu nome é adriana e por isso me chamo adriana";
 
   int contador = 0;
 
@@ -472,7 +472,7 @@ void _desafio18() {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _desafio1,
+        onPressed: _desafio18,
         tooltip: '_desafio1',
         child: const Icon(FontAwesomeIcons.rocket),
       ),
